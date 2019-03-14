@@ -21,12 +21,12 @@ function isAllTrue(array, fn) {
         throw new Error("empty array");
     }
     
-    let state = true;
+    let isTrue = true;
 
     for (let i = 0; i < array.length; i++) {
-        state = fn(array[i]);
+        isTrue = fn(array[i]);
 
-        if (!state) {
+        if (!isTrue) {
             return false;
         }
     }
@@ -55,12 +55,12 @@ function isSomeTrue(array, fn) {
         throw new Error("fn is not a function"); 
     }
     
-    let state = false;
+    let isTrue = false;
 
     for (let i = 0; i < array.length; i++) {
-        state = fn(array[i]);
+        isTrue = fn(array[i]);
 
-        if (state) {
+        if (isTrue) {
             return true;
         }
     }
@@ -114,23 +114,23 @@ function calculator(number = 0) {
     }
 
     return {
-        sum(...args) {
+        sum (...args) {
             for (let i = 0; i < args.length; i++) {
                 number += args[i];
             }
             return number;
         },
 
-        dif(...args) {
+        dif (...args) {
             for (let i = 0; i < args.length; i++) {
                 number -= args[i];
             }
             return number;
         },
 
-        div(...args) {
+        div (...args) {
             for (let i = 0; i < args.length; i++) {
-                if(args[i] === 0) {
+                if (args[i] === 0) {
                     throw new Error('division by 0');
                 }
                 number /= args[i];
@@ -138,7 +138,7 @@ function calculator(number = 0) {
             return number;
         },
 
-        mul(...args) {
+        mul (...args) {
             for (let i = 0; i < args.length; i++) {
                 number *= args[i];
             }
